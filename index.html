@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Slopegraph</title>
+
+  <meta name="keywords" content="graphic design, infographics, information design, datavisualisatie" /> 
+  <meta name="description" content="Bij Studio Brandstof maken we Data Visualisaties en Infographics voor web en print. " /> 
+  <meta name="author" content="Gordon Hatusupy">
+
+	<script type="text/javascript" src="js/d3.v3.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+	</head>
+
+	<body>
+	<p>
+	<div id="slope"></div>
+		<script>
+		var dataset_a = [
+			[257.85, 41374, "Breast Cancer", "Komen Race for the Cure(2012)"], 
+			[147, 21176, "Prostate Cancer", "Movember(2013)"], 
+			[54.1, 596577, "Heart Disease", "Jump Rope for the Hearth(2013)"], 
+			[22.9, 6849, "Motor Neuron Disease", "ALS Ice Bucket Challenge(2014)"], 
+			[14, 7683, "HIV / AIDS", "Ride to End Aids"], 
+			[7, 142942, "Chronic Obstructive Pulmonary Disease", "Fight for Air Climb(2013)"], 
+			[4.2, 73831, "Diabetes", "Step Out:Walk to stop Diabetes(2013)"], 
+			[3.2, 39518, "Suicide", "Out of Darkness Overnight Walk(2014)"]
+			];
+
+		var h = 600;
+		var w = 960;
+		var padding = 50;
+
+		var start_x = 300;
+		var end_x = 660;
+
+        var a_ext = d3.extent(dataset_a, function(d){
+            return parseFloat(d[0]);
+        });
+
+        var b_ext = d3.extent(dataset_a, function(d){
+            return parseFloat(d[1]);
+        });
+
+        var aScale = d3.scale.linear()
+            .domain(a_ext)
+            .range([h - padding, 0 + padding]);
+
+        var bScale = d3.scale.linear()
+            .domain(b_ext)
+            .range([h - padding, 0 + padding]);
+
+        var color_scale = d3.scale.category20();
+
+        var tooltip = d3.select("body").append("div")   
+            .attr("class", "tooltip")               
+            .style("opacity", 0);
+
+		var svg = d3.select('#slope')
+			.append('svg')
+			.attr('height', h)
+			.attr('width', w)
+			.attr('class', 'slope_svg')
+
+		var lines = svg.selectAll('line')
+			.data(dataset_a)
+			.enter()
+			.append('line')
+			.attr('x1', start_x)
+			.attr('y1', function(d){ return aScale(d[0]) })
+			.attr('x2', end_x)
+			.attr('y2', function(d){ return bScale(d[1]) })
+			.attr("stroke-width", 8)
+			.attr('stroke-linecap', 'round')
+	        .attr("stroke", color_scale)
+                .on("mouseover", function(d) {
+	        		tooltip.transition()        
+                        .duration(100)      
+                        .style("opacity", .9);      
+                    tooltip.html(d[2] + '<br/>' + '$' + parseFloat((d[0] * 1000000) / d[1]).toFixed(2) + ' per death'
+                    	+ "<br/><br/>" + d[3])
+                        .style("left", (d3.event.pageX + 15) - 50 + "px")     
+                        .style("top", (d3.event.pageY - 150) + "px")
+                        .style('color', '#fafafa')
+                        .style('position', 'absolute')
+                        .style('background-color', '#222222')
+                        .style('padding', '10px'); 
+                    lines.transition()
+                    	.attr('opacity', 0.2)
+                	d3.select(this).transition()
+	                	.attr('stroke', color_scale)
+	                	.attr('opacity', 1)
+
+	                // var la = svg
+	                // 	.append('text')
+	                // 	.attr('id', 'labela')
+	                // 	.attr('x', 220)
+	                // 	.attr('y', aScale(d[0]))
+	                // 	.text("$" + d[0] + " M")
+
+	                // var lb = svg
+	                // 	.append('text')
+	                // 	.attr('id', 'labelb')
+	                // 	.attr('x', end_x + 20)
+	                // 	.attr('y', bScale(d[1]))
+	                // 	.text(d[1])
+                    })
+                .on("mouseout", function(d) {       
+                    tooltip.transition()        
+                        .duration(300)      
+                        .style("opacity", 0)
+						.style("left", 0)     
+                        .style("top", 0)                    
+                        lines.transition()
+                    	.attr('opacity', 1)
+                    d3.select('#labela').remove();
+                    d3.select('#labelb').remove();               
+               
+                    })
+
+               var title_a = svg.append('text')
+               		.attr('x', start_x - 80)
+               		.attr('y', 15)
+               		.attr('font-weight', 'bold')
+               		.text('Money Raised(in Million $)')
+
+               var title_b = svg.append('text')
+               		.attr('x', end_x - 55)
+               		.attr('y', 15)
+               		.attr('font-weight', 'bold')
+               		.text('Total Deaths(US)')
+
+               var nulpunt_a = svg.append('text')
+               		.attr('x', end_x - 5)
+               		.attr('y', h - 20)
+               		.text('0')
+
+               var nulpunt_b = svg.append('text')
+               		.attr('x', start_x - 5)
+               		.attr('y', h - 20)
+               		.text('0')
+
+               var axis_a = svg.append('rect')
+               		.attr('x', start_x)
+               		.attr('y', padding)
+               		.attr('height', h - padding * 2)
+               		.attr('width', 1.5)
+               		.attr('opacity', 0.1)
+
+               var axis_b = svg.append('rect')
+               		.attr('x', end_x)
+               		.attr('y', padding)
+               		.attr('height', h - padding * 2)
+               		.attr('width', 1.5)
+               		.attr('opacity', 0.1)
+
+	    var labels_a = svg.selectAll('text_a')
+	    	.data(dataset_a)
+	    	.enter()
+	    	.append('text')
+	    	.attr('x', 130)
+	    	.attr('y', function(d){ return aScale(d[0]) })
+	    	.text(function(d){ return d[0] })
+	        .attr("fill", color_scale)
+
+	    var labels_b = svg.selectAll('text_b')
+	    	.data(dataset_a)
+	    	.enter()
+	    	.append('text')
+	    	.attr('x', 800)
+	    	.attr('y', function(d){ return bScale(d[1]) })
+	    	.text(function(d){ return d[1] })
+	        .attr("fill", color_scale)
+
+	</script>
+</p>
+	</body>
+</html>

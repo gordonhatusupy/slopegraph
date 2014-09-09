@@ -1,0 +1,246 @@
+		body{
+  		font-family: "Helvetica Neue", "Helvetica";
+			margin: 0;
+
+		}
+		.tooltip{
+			font-size: 14px;
+		}
+		.sub_title{
+			font-weight: bold;
+			font-size:18px;
+		}
+		#slope{
+				margin-left: auto;
+			margin-right: auto;
+			width: 960px;
+			display: block;
+		}
+		.fig1{
+			margin-left: auto;
+			margin-right: auto;
+			width: 760px;
+			display: block;
+			text-align: center;		
+		}
+		.fig2, #viz{
+			margin-left: auto;
+			margin-right: auto;
+			width: 960px;
+			display: block;
+			text-align: center;		
+		}
+		.top{
+
+			background:#171a1f;
+		}
+		.top_holder{
+			margin-left: auto;
+			margin-right: auto;
+			height: 134px;
+			width:970px;
+		}
+		.nav{
+			color: white;
+			font-weight: bold;
+			margin-top: 62px;			
+			float:right;
+		}
+		.top a {
+			font-size: 15px;
+			color: white;
+			padding-right: 10px;
+			padding-left: 10px;
+			text-decoration: none;
+		}
+		.top_holder img{
+			margin-top: 55px;
+		}
+		.top img{
+			opacity:1;
+		}
+		.viz, .content {
+			margin-left: auto;
+			margin-right: auto;
+			width: 500px;
+			display: block;
+		}
+		table{
+			margin-left: auto;
+			margin-right: auto;
+		}
+			.wikitable th td
+			{
+				border: 1px solid #333333;
+
+			}
+		.example{
+			padding:0px 0px 12px 0px;
+			padding-bottom: 12px;
+			text-align: center;
+			font-size: 14px;
+		}
+		h1, .container, h2{
+			margin-left: auto;
+			margin-right: auto;
+			width: 600px;
+		}
+		h1{
+			color: #222;
+			font-size:32px;
+  			font-family: "Helvetica Neue", "Helvetica";
+			line-height: 1.52em;
+			margin-top:50px;
+		}
+		h2{
+			margin-top: 32px;
+			font-size: 24px;
+		}
+		p{	
+  			font-family: "Helvetica Neue", "Helvetica";
+	 		font-weight: 400;
+	 		font-style: normal;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 16px;
+			line-height: 26px;
+			color: #222;
+			margin-top: 32px;
+			margin-bottom: 32px;
+			width: 600px;
+		}
+		.italic{
+			font-size: 13px;
+		}
+		.footer{
+			height:125px;
+		}
+		a{
+			color: #222;
+			font-weight: bold;
+		}
+		a:visited{
+			color: #222;
+		}
+		.top a:visited{
+			color: #fff;
+		}
+		.comment{
+			padding: 14px 20px 14px 20px;
+			background-color: #f1f1f1;
+			text-align: left;
+		}
+		.small{
+			font-size: 12px;
+		}
+		.container_nav{
+			margin-left: auto;
+			margin-right: auto;
+			width: 800px;
+		}
+		.container_nav img{
+			margin-left: 100px;
+			margin-top: 22px;
+			float: left;
+		}
+		.container_nav .links{
+			float: right;
+			padding-top: 46px;
+			margin-right: 100px;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		.links a:hover{
+			text-decoration: none;
+		}
+		.links a{
+			color: #fff;
+			margin-right:6px;
+		}
+		.footer{
+			border-top:1px solid #f1f1f1;
+			height: 90px;
+			padding-bottom: 32px;
+			font-size: 14px;
+		}
+		.conclusion{
+			padding: 14px 20px 14px 20px;
+			background-color: #baffdd;
+		}
+		.date{
+			color: #222;
+		}
+		hr{
+	        color:#f1f1f1;
+	        margin:0;
+	        border:none;
+	        border-top:1px solid #f1f1f1;
+	        height:1px;
+		}
+
+			.ps {
+				font-size: 14px;
+				color:#6d6d6d;
+			}
+			.poster{
+				clear:both;
+				height: 400px;
+				background-color: #0e152f;
+				background-image: url(../images/bg.jpg);
+				background-position:center; 
+
+				background-repeat: no-repeat;
+			}
+
+			.axis path,
+			.axis line {
+				fill: none;
+				stroke: gray;
+				shape-rendering: crispEdges;
+			}
+			
+			.axis text {
+				font-family: 'Source Sans Pro', sans-serif;
+				font-color: gray;
+				font-weight: 700;
+				font-size: 12px;
+			}
+
+			.container{
+				width: 750px;
+				font-family: 'Source Sans Pro', sans-serif;
+				font-size: 16px;
+				margin-left: auto;
+    			margin-right: auto;
+ 
+			}
+			.color1{
+				color:#009999;
+			}
+			.color2{
+				color:#1240AB;
+			}
+			.color3{
+				color:#FFAA00;
+			}
+			.color4{
+				color:#FF7400;
+			}
+			.viz_table {
+				border: none;
+			}
+			.foto_credits{
+				position: absolute;
+				left: 50px;
+				letter-spacing: 1px;
+				top: 170px;
+				color: #fff;
+				opacity: 0.6;
+				font-size: 10px;
+			}
+			.c0{
+				fill: #31c194;
+			}
+			.c1{
+				fill: #b437b4;
+			}

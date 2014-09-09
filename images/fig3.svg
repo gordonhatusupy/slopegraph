@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="211.5px" viewBox="0 0 960 211.5" enable-background="new 0 0 960 211.5" xml:space="preserve">
+<circle fill="#31C194" cx="262" cy="90" r="10"/>
+<path fill="#B437B4" d="M699,78.333c27.612,0,50,22.383,50,50s-22.388,50-50,50s-50-22.383-50-50S671.388,78.333,699,78.333z"/>
+<text transform="matrix(1 0 0 1 256 32)" font-family="'AktivGrotesk-Bold'" font-size="16">A</text>
+<text transform="matrix(1 0 0 1 694 32)" font-family="'AktivGrotesk-Bold'" font-size="16">B</text>
+<g>
+	<text transform="matrix(1 0 0 1 279.6665 72.2778)" font-family="'AktivGrotesk-Medium'" font-size="13">20px</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 756 72.2778)" font-family="'AktivGrotesk-Medium'" font-size="13">100px</text>
+</g>
+<text transform="matrix(1 0 0 1 236.333 72.2778)" fill="#31C194" font-family="'AktivGrotesk-Medium'" font-size="13">1</text>
+<text transform="matrix(1 0 0 1 635.167 72.2778)" fill="#B437B4" font-family="'AktivGrotesk-Medium'" font-size="13">5</text>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="252" y1="67.944" x2="272" y2="67.944"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="272" y1="62.611" x2="272" y2="73.278"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="252" y1="62.611" x2="252" y2="73.278"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="652" y1="67.944" x2="749" y2="67.944"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="749" y1="62.611" x2="749" y2="73.278"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="652" y1="62.611" x2="652" y2="73.278"/>
+</svg>
